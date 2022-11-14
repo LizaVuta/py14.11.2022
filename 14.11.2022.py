@@ -1,3 +1,13 @@
 import pandas as pd
-df= pd.read_csv('C:/Users/digdepstudent/Documents/Вута/14.11.2022/py14.11.2022/data.tsv', sep='\t', index_col = 'ID')
+df= pd.read_csv('C:/Users/digdepstudent/Documents/Вута/14.11.2022/py14.11.2022/data.tsv', sep='\t', index_col = 'ID'
+)
+#print(df.head())
+#print(df.tail())
+#rint(df.to_string())
+print(df.info())
+df=df.dropna(axis=0)
 print(df.to_string())
+x= df['age'].mean()
+df['age'].fillna(x, inplace= True)
+print(df.to_string())
+print(df.info())
